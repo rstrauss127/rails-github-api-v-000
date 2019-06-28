@@ -9,6 +9,7 @@ class SessionsController < ApplicationController
       req.headers['Accept'] = 'application/json'
     end
     body = JSON.parse(response.body)
+    raise response.inspect
     session[:token] = body["access_token"]
 
     redirect_to root_path
