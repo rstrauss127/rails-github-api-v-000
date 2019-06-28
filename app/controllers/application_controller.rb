@@ -8,6 +8,8 @@ class ApplicationController < ActionController::Base
   private
 
   def authenticate_user
+    client_id = ENV['GITHUB_CLIENT']
+    redirect_uri = CGI.escape("http://localhost:3000/auth")
   end
 
   def logged_in?
