@@ -3,8 +3,6 @@ class SessionsController < ApplicationController
 
   def create
     response = Faraday.post "http://github.com/login/oauth/access_token?client_id=#{ENV["GITHUB_CLIENT"]}&client_secret=#{ENV["GITHUB_SECRET"]}&code=#{params[:code]}"
-
-    end
     puts response
   end
 end
